@@ -2,10 +2,20 @@ package paes.javaThread;
 
 public class Thread2 implements Runnable {
 
-	@Override
+    private Acumulador total;
+
+    public Thread2 (Acumulador total) {
+        this.total = total;
+    }
+
+    @Override
 	public void run() {
-		for (int i = 201; i <= 400; i++) {
-			System.out.println("Etapa 2:" + i);
+        int t = 0;
+
+		for (int i = 0; i <= 1; i++) {
+			if (i % 2 != 0) total.totalImpares += 1;
 		}
-	}
+		this.total.totalImpares = t;
+        System.out.println(t);
+    }
 }
