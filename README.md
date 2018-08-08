@@ -1,6 +1,7 @@
 # JavaStudies - Java Classes and Collections
 
-Using Java (version 1.9) in Intellij IDE 2018.1, this repository was made in one of the Java Collections fundamentals-classes. The main purpose of this project was learn and practice some of the innumeral Java collections and libraries.
+Using Java (version 1.9) in IntelliJ IDE 2018.2, this repository was made for the Distributed Programming classes. 
+The main purpose of this project is learn and practice some of the innumeral methods for distributing computer processment.
 
 ----------------------------------------
 
