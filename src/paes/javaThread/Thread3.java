@@ -9,13 +9,8 @@ public class Thread3 implements Runnable {
     @Override
     public void run() {
         while (total.getTotalImpares() == 0 || total.getTotalPares() == 0) {
-            System.out.println(Thread.currentThread().getId());
-
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            try { Thread.sleep(2000); }
+            catch (InterruptedException e) { e.printStackTrace(); }
         }
 
         int soma = (total.getTotalImpares() + total.getTotalPares());
