@@ -2,7 +2,22 @@ package paes.javaThread;
 
 public class Acumulador {
 
-    public long totalImpares = 0;
-    public long totalPares = 0;
+    private int totalImpares = 0;
+    private int totalPares = 0;
 
+    public int getTotalImpares() {
+        return totalImpares;
+    }
+
+    public void setTotalImpares(int totalImpares) {
+        this.totalImpares = totalImpares;
+    }
+
+    public int getTotalPares() {
+        return totalPares;
+    }
+
+    public void setTotalPares(int totalPares) {
+        this.totalPares = totalPares;
+    }
 }

@@ -4,17 +4,16 @@ public class Thread1 implements Runnable {
 
     private Acumulador total;
 
-    public Thread1 (Acumulador total) {
-        this.total = total;
-    }
+    public Thread1 (Acumulador total) { this.total = total; }
 
     @Override
 	public void run() {
 	    int t = 0;
 
-		for (int i = 0; i <= 1; i++) {
-			if (i % 2 == 0) total.totalPares += 1;
+		for (int i = 0; i < 1000; i++) {
+			if (i % 2 == 0) t += 1;
+            System.out.println(Thread.currentThread().getName());
 		}
-	    this.total.totalPares = t;
+	    this.total.setTotalPares(t);
 	}
 }

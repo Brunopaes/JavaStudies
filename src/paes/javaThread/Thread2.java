@@ -12,10 +12,10 @@ public class Thread2 implements Runnable {
 	public void run() {
         int t = 0;
 
-		for (int i = 0; i <= 1; i++) {
-			if (i % 2 != 0) total.totalImpares += 1;
-		}
-		this.total.totalImpares = t;
-        System.out.println(t);
+		for (int i = 0; i < 1000; i++) {
+			if (i % 2 != 0) t += 1;
+            System.out.println(Thread.currentThread().getName());
+        }
+		this.total.setTotalImpares(t);
     }
 }
