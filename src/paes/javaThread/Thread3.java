@@ -1,22 +1,23 @@
 package paes.javaThread;
 
 public class Thread3 implements Runnable {
+    private Acumulator total;
 
-    private Acumulador total;
-
-    public Thread3 (Acumulador total) { this.total = total; }
+    public Thread3(Acumulator total) {
+        this.total = total;
+    }
 
     @Override
     public void run() {
-        while (total.getTotalImpares() == 0 || total.getTotalPares() == 0) {
+        while (total.getTotalEven() == 0 || total.getTotalOdd() == 0) {
+            System.out.println(Thread.currentThread().getName());
+
             try { Thread.sleep(2000); }
             catch (InterruptedException e) { e.printStackTrace(); }
         }
 
-        int soma = (total.getTotalImpares() + total.getTotalPares());
+        int sum = (total.getTotalEven() + total.getTotalOdd());
 
-        System.out.println("Total: " + soma);
-        System.out.println("Total Pares: " + total.getTotalPares());
-        System.out.println("Total Ímpares: " + total.getTotalImpares());
+        total.toString(sum);
     }
 }

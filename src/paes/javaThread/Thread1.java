@@ -1,19 +1,22 @@
 package paes.javaThread;
 
 public class Thread1 implements Runnable {
+    private Acumulator totalEven;
+    private int max;
 
-    private Acumulador total;
-
-    public Thread1 (Acumulador total) { this.total = total; }
+    public Thread1(Acumulator totalEven, int max) {
+        this.totalEven = totalEven;
+        this.max = max;
+    }
 
     @Override
-	public void run() {
-	    int t = 0;
+    public void run() {
+        int t = 0;
 
-		for (int i = 0; i < 1000; i++) {
-			if (i % 2 == 0) t += 1;
+        for (int i = 0; i < max; i++) {
+            if (i % 2 == 0) t += 1;
             System.out.println(Thread.currentThread().getName());
-		}
-	    this.total.setTotalPares(t);
-	}
+        }
+        this.totalEven.setTotalEven(t);
+    }
 }
