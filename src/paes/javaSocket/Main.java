@@ -1,44 +1,28 @@
 package paes.javaSocket;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) {
-		
-		OutputStream os = null;
-		InputStream is = null;
-		
-		while (true) {
-			try {
-				Socket s = new Socket("10.15.0.198",8888);
-				
-				os = s.getOutputStream();
-				os.write("H".getBytes());
-				
-				is = s.getInputStream();
-				
-				int x = is.read();
-				String y = "";
-				
-				do {
-					y += (char) x;
-					x = is.read();
-					System.out.println(y);
-				} while(x != -1);
-				
-				System.out.println(y);
-				
-				s.close();
-				os.close();
-				is.close();
-			} 
-			
-			catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
+    public static void main(String[] args) {
+
+        //prepare the http message - header
+        String http = "GET / HTTP/1.1\n" +
+                "Host: www.teste.com\n\n";
+
+        try {
+            Socket s = new Socket("www.megapizzafoz.com.br", 80);
+
+            //send the http message to the server
+            s.getOutputStream().write(http.getBytes());
+
+            //get the http message from server
+            Scanner sc = new Scanner(s.getInputStream());
+            System.out.println(sc.nextLine());
+
+            s.close();
+        }
+        catch (Exception e) { e.printStackTrace(); }
+    }
 }
