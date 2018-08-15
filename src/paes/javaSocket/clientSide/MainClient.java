@@ -1,10 +1,9 @@
-package paes.javaSocket;
+package paes.javaSocket.clientSide;
 
-import java.io.InputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class MainSocket {
+public class MainClient {
     public static void main(String[] args) {
 
         //prepare the http message - header
