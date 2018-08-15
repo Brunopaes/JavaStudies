@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Main {
+public class MainSocket {
     public static void main(String[] args) {
 
         //prepare the http message - header
