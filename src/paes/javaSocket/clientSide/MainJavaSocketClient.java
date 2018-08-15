@@ -3,7 +3,7 @@ package paes.javaSocket.clientSide;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class MainClient {
+public class MainJavaSocketClient {
     public static void main(String[] args) {
 
         //prepare the http message - header

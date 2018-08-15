@@ -3,7 +3,7 @@ package paes.javaSocket.serverSide;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class MainServer {
+public class MainJavaSocketServer {
     public static void main(String[] args) {
 
         String corpo = "<h1>Oi! Boa Noite!</h1>";

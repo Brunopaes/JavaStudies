@@ -8,7 +8,7 @@ public class MainRMIClient {
     public static void main(String[] args) {
         try {
             //Connect to the RMI stub registry (server side)
-            Registry r = LocateRegistry.getRegistry("127.0.0.1", 8040);
+            Registry r = LocateRegistry.getRegistry("10.12.182.161", 8040);
 
             //search the remote object (defined in the server)
             MessageRemote i = (MessageRemote) r.lookup("Message");
