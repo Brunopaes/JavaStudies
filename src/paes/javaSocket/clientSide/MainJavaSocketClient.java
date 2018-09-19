@@ -11,7 +11,7 @@ public class MainJavaSocketClient {
                 "Host: www.teste.com\n\n";
 
         try {
-            Socket s = new Socket("www.megapizzafoz.com.br", 80);
+            Socket s = new Socket("localhost", 80);
 
             //send the http message to the server
             s.getOutputStream().write(http.getBytes());
